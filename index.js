@@ -27,10 +27,12 @@ const cosasQueAprendimos = [
 
 const eliminarLi = () => {
   const listaEl = document.querySelector(".lista");
-  const liEl = listaEl.querySelectorAll("li");
-  liEl.forEach((li) => {
-    li.remove();
-  });
+  if (listaEl) {
+    const liEl = listaEl.querySelectorAll("li");
+    liEl.forEach((li) => {
+      li.remove();
+    });
+  }
 };
 
 const agregarClases = (clase) => {
