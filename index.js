@@ -41,17 +41,39 @@ const agregarClases = (clase) => {
   });
 };
 const agregarLi = () => {
-  cosasQueAprendimos.forEach((cosa) => {
-    const liEl = document.createElement("li");
-    liEl.textContent = cosa.tema;
-    liEl.classList.add(cosa.class);
-    const listaEl = document.querySelector(".lista");
-    listaEl.append(liEl);
-  });
+  const listaEl = document.querySelector(".lista");
+
+  if (!listaEl.children[0]) {
+    cosasQueAprendimos.forEach((cosa) => {
+      const liEl = document.createElement("li");
+      liEl.textContent = cosa.tema;
+      liEl.classList.add(cosa.class);
+      listaEl.append(liEl);
+    });
+  }
 };
 
-function main() {}
-eliminarLi();
-agregarClases("special");
-agregarLi();
+function main() {
+  const button = document.querySelectorAll(".button");
+  button.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      if (e.target.id === "eliminar") {
+        eliminarLi();
+        btn.classList.add("presionado");
+        setTimeout(() => {
+          btn.classList.remove("presionado");
+        }, 200);
+      }
+      if (e.target.id === "agregar") {
+        agregarClases("special");
+        agregarLi();
+        btn.classList.add("presionado");
+        setTimeout(() => {
+          btn.classList.remove("presionado");
+        }, 200);
+      }
+    });
+  });
+}
+
 main();

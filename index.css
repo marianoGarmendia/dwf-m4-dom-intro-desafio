@@ -9,3 +9,47 @@
 .lista li.special {
   background-color: tomato;
 }
+
+.lista-container {
+  min-height: 300px;
+}
+
+.section-principal {
+  display: flex;
+  width: 90%;
+  max-width: 500px;
+  margin: 50px auto;
+  flex-direction: column;
+  row-gap: 50px;
+  align-content: center;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button {
+  padding: 10px;
+  color: #eee;
+  background-color: rgb(66, 66, 194);
+  width: 120px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.button:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+}
+
+.presionado {
+  box-shadow: none;
+  color: #eeeeee77;
+}
+
+button.presionado:hover {
+  box-shadow: none;
+  color: #eeeeee77;
+}
